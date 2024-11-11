@@ -35,7 +35,6 @@ const Game = () => {
   const [quote, setQuote] = React.useState('');
   const [showQuote, setShowQuote] = React.useState(false);
   const [userChoice, setUserChoice] = React.useState(null);
-  const [finalMessage, setFinalMessage] = React.useState('');
 
   const handleChoice = (choice) => {
     const currentScenario = scenarios[currentScenarioIndex];
@@ -50,7 +49,6 @@ const Game = () => {
       setCurrentScenarioIndex((prevIndex) => prevIndex + 1);
     } else {
       const finalScenario = scenarios[currentScenarioIndex];
-      setFinalMessage(`Quiero ir de ${userChoice} shopping spree con Maimo pofavo!!`);
       sendMessageOnWhatsApp(finalScenario);
     }
   };
