@@ -1,0 +1,156 @@
+/* Color Palette */
+:root {
+  --mango-yellow: #f39c12;
+  --mango-dark: #e67e22;
+  --mango-darker: #d35400;
+  --turquoise-light: #1abc9c;
+  --turquoise-dark: #16a085;
+  --white: #ffffff;
+}
+
+/* Styling for the App */
+.App {
+  background:
+    url('public/ManguEsp.jpg') no-repeat center/cover;
+  color: var(--white);
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.App.zoomed {
+  background-size: 320%;
+}
+
+/* 
+.App:hover {
+  background-size: 120%;
+  background-position: center;
+} */
+
+
+h1 {
+  color: var(--mango-yellow);
+  font-size: 2rem;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px;
+  background-color: var(--turquoise-dark);
+}
+
+.playerApp {
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  top: -150px;
+}
+
+.home-button {
+  text-decoration: none;
+  margin: 10px;
+}
+
+.home-button button {
+  background-color: #f39c12;
+  /* Mango-like color */
+  color: var(--white);
+  font-size: 18px;
+  font-weight: bold;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.home-button button:hover {
+  background-color: var(--mango-dark);
+  transform: scale(1.05);
+}
+
+.home-button button:active {
+  background-color: var(--mango-darker);
+  box-shadow: none;
+}
+
+/* Mango Button Styling */
+.mango-button {
+  background-color: #f39c12;
+  /* Mango-like color */
+  color: var(--white);
+  font-size: 18px;
+  font-weight: bold;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.mango-button:hover {
+  background-color: var(--mango-dark);
+  transform: scale(1.1);
+}
+
+.mango-button:focus {
+  outline: none;
+}
+
+.mango-button:active {
+  background-color: var(--mango-darker);
+  box-shadow: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .App {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .home-button button {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+
+  .mango-button {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .App {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+    color: #ffffff;
+  }
+
+  .home-button button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .mango-button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+}
