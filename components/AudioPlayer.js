@@ -15,7 +15,7 @@ const AudioPlayer = () => {
                 {playing ? 'Pause' : 'Play'} Music
             </button>
             <ReactPlayer
-                url="https://youtube.com/shorts/frJpybfc8so?feature=share"
+                url='https://youtube.com/shorts/frJpybfc8so'
                 playing={playing}
                 controls
                 loop
