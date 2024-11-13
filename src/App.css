@@ -29,17 +29,19 @@
   background-position: center;
 } */
 
-
 h1 {
   color: var(--mango-yellow);
   font-size: 2rem;
 }
 
-
+/* Updated Navbar Styling */
 .navbar {
   display: flex;
-  justify-content: flex-start;
-  padding: 10px;
+  justify-content: space-between;
+  /* Distributes items evenly */
+  align-items: center;
+  /* Centers items vertically */
+  padding: 10px 20px;
   background-color: var(--turquoise-dark);
 }
 
@@ -153,4 +155,46 @@ h1 {
     flex-direction: column;
     align-items: center;
   }
+}
+
+
+.about-page {
+  text-align: center;
+  padding: 20px;
+}
+
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.carousel-image {
+  width: 80%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.carousel-button:hover {
+  color: var(--mango-yellow);
+  /* Use any color you like */
+}
+
+.bio-text {
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 600px;
+  margin: 0 auto;
 }

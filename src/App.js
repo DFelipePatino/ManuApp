@@ -3,11 +3,12 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import React, { useState } from 'react'; // Ensure correct import
 import './App.css';
+import NavBar from '../src/components/NavBar';
 import Scenario from './components/Scenario';
 import ResultQuote from './components/ResultQuote';
 import scenarios from './data/scenarios';
-import AudioPlayer from './components/AudioPlayer'; // Import AudioPlayer
-
+import AudioPlayer from './components/AudioPlayer';
+import AboutPage from './components/AboutPage';
 
 
 
@@ -23,6 +24,9 @@ const Home = () => {
   return (
     <div className={`App ${isZoomed ? 'zoomed' : ''}`}>
       <h1>Que prefieres Mangu?</h1>
+      <div className='playerApp'>
+        <AudioPlayer />
+      </div>
       <Link to="/game" className="home-button" onClick={handleZoom}>
         <button>"¡Vámonos allá, tío!"</button>
       </Link>
@@ -54,7 +58,7 @@ const Game = () => {
   };
 
   const sendMessageOnWhatsApp = (finalScenario) => {
-    const whatsappUrl = `https://api.whatsapp.com/send/?phone=%2B573024274424&text=Quiero+ir+de+${userChoice}+shopping+spree+con+Maimo+pofavoo!!&type=phone_number&app_absent=0`;
+    const whatsappUrl = `https://api.whatsapp.com/send/?phone=%2B573024274424&text=Quiero+ir+de+${userChoice}+shopping+spree+con+Maimo+pofavoo!!+Favor+copiar+y+pegar+este+mensaje+en+InstaDm+de+su+movio+porque+no+tiene+Wa&type=phone_number&app_absent=0`;
     const anchor = document.createElement('a');
     anchor.href = whatsappUrl;
     anchor.target = '_blank';
@@ -78,24 +82,16 @@ const Game = () => {
   );
 };
 
-const MangoButton = ({ onClick }) => {
-  return (
-    <button className="mango-button" onClick={onClick}>
-      Mangu
-    </button>
-  );
-};
+
+
+
 
 const App = () => (
   <Router>
-    <div className="navbar">
-      <Link to="/" className="home-button">
-        <MangoButton />
-      </Link>
-    </div>
-
+    <NavBar /> {/* NavBar will always be rendered */}
     <Routes>
       <Route path="/game" element={<Game />} />
+      <Route path="/about" element={<AboutPage />} />
       <Route path="/" element={<Home />} />
     </Routes>
   </Router>
